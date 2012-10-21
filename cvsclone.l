@@ -827,8 +827,9 @@ void puttree2(struct rev *z, struct rev *x)
 			for (z = y; z && !strcmp(z->state, "dead"); z = z->next)
 				continue;
 			if (z) {
-				sprintf(getq(10*4+5+2+3+2+strlen(z->num)
+				sprintf(getq(10*5+5+3+2+3+2+strlen(z->num)
 					+ (fi2 - strrchr(fi, '/')) - 1), 
+					"Argument -kb\n"
 					"Argument -r%s\n"
 					"Argument -aN\n"
 					"Argument --\n"
@@ -841,9 +842,10 @@ void puttree2(struct rev *z, struct rev *x)
 				/* file was initially added on branch */
 				z = y;
 		} else if (strcmp(y->state, "dead") && z != y) {
-			sprintf(getq(10*5+5+2+2+2+2+strlen(z->num)
+			sprintf(getq(10*6+5+3+2+2+3+2+strlen(z->num)
 				+ strlen(y->num)
 				+ (fi2 - strrchr(fi, '/'))), 
+				"Argument -kb\n"
 				"Argument -r%s\n"
 				"Argument -r%s\n"
 				"Argument -aN\n"
